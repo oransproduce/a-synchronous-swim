@@ -1,4 +1,5 @@
 // (function() {
+//  IIFE function expression commented out for testing purposes
 
   const serverUrl = 'http://127.0.0.1:3000';
 
@@ -9,11 +10,9 @@
   const commandFetcher = () => {
     $.ajax({
       type: 'GET',
-      url: serverUrl,
-      Origin: serverUrl,
+      url: 'http://127.0.0.1:3000',
       success: (data) => {
-        console.log('data: ', data);
-        SwimTeam.move();
+        SwimTeam.move(data);
         // reload the page
         window.location = window.location.href;
       },
@@ -62,4 +61,5 @@
     ajaxFileUplaod(file);
   });
 
+//export default commandFetcher
 // })();
