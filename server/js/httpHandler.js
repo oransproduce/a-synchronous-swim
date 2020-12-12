@@ -11,11 +11,11 @@ module.exports.backgroundImageFile = path.join('.', 'background.jpg');
 ////////////////////////////////////////////////////////
 // fs.readFile('/Users/Taivnaa/Desktop/hack-reactor/Week-3/hrsf132-a-synchronous-swim/server/spec/water-lg.jpg', (err, data) => {
 //   console.log(exports.backgroundImageFile);
-  // fs.writeFile(exports.backgroundImageFile, data, (err) => {
-  //   console.log(data);
-  //   if (err) throw err;
-  //   console.log('The file has been saved!');
-  // });
+// fs.writeFile(exports.backgroundImageFile, data, (err) => {
+//   console.log(data);
+//   if (err) throw err;
+//   console.log('The file has been saved!');
+// });
 // });
 // fs.unlinkSync(exports.backgroundImageFile);
 let messageQueue = null;
@@ -51,13 +51,13 @@ module.exports.router = (req, res, next = ()=>{}) => {
     // }
   }
   next();
-      // res.end(data);
-
-    // const shifted = messageQueue.dequeue();
-    // if (shifted) {
-    //   res.write(shifted);
-    // }
-  };
   // res.end(data);
-   // invoke next() at the end of a request to help with testing!
+
+  // const shifted = messageQueue.dequeue();
+  // if (shifted) {
+  //   res.write(shifted);
+  // }
+};
+// res.end(data);
+// invoke next() at the end of a request to help with testing!
 
