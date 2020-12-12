@@ -10,16 +10,17 @@
   const commandFetcher = () => {
     $.ajax({
       type: 'GET',
-      url: 'http://127.0.0.1:3000',
+      url: 'http://127.0.0.1:3000/',
       success: (data) => {
+        console.log('data: ', data);
         SwimTeam.move(data);
         // reload the page
-        window.location = window.location.href;
+        // window.location = window.location.href;
       },
       error: err => console.log('error: ', err)
     });
   };
-
+  // setInterval(commandFetcher, 1000);
 
   /////////////////////////////////////////////////////////////////////
   // The ajax file uplaoder is provided for your convenience!

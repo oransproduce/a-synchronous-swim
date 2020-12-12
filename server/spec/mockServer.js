@@ -1,4 +1,3 @@
-
 /////////////////////////////////////////////////
 // Mock out the node request / response functions
 // Note: these are useful when running bare node.
@@ -33,6 +32,7 @@ var response = function() {
   this._data = Buffer.alloc(0);
 
   this.on = this.once = this.emit = ()=>{};
+
 
   this.writeHead = (responseCode, headers) => {
     this._responseCode = responseCode;

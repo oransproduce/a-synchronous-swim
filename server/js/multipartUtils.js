@@ -1,5 +1,7 @@
 var parser = require('parse-multipart');
 
+// About getting image with correct path
+
 module.exports.getBoundary = function(buffer) {
   var finder = /--(----\w+)\b/;
   var boundary = buffer.toString().match(finder);

@@ -1,6 +1,6 @@
 
 
-const msg = require('./js/messageQueue')
+const msg = require('./js/messageQueue');
 const keypressHandler = require('./js/keypressHandler');
 keypressHandler.initialize(message => {
   // call the func with the msg
@@ -9,7 +9,7 @@ keypressHandler.initialize(message => {
 });
 
 const httpHandler = require('./js/httpHandler');
-//httpHandler.initialize()
+httpHandler.initialize(msg);
 
 const http = require('http');
 const server = http.createServer(httpHandler.router);
