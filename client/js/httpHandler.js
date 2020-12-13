@@ -12,9 +12,10 @@
       type: 'GET',
       url: 'http://127.0.0.1:3000',
       success: (data) => {
+        console.log(data);
         SwimTeam.move(data);
         // reload the page
-        window.location = window.location.href;
+        //window.location = window.location.href;
       },
       error: err => console.log('error: ', err)
     });
