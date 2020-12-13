@@ -62,5 +62,4 @@ $('form').on('submit', function(e) {
   ajaxFileUplaod(file);
 });
 
-//export default commandFetcher
 // })();

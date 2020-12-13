@@ -32,11 +32,10 @@ module.exports.router = (req, res, next = ()=>{}) => {
     fs.readFile('/Users/Taivnaa/Desktop/hack-reactor/Week-3/hrsf132-a-synchronous-swim/server/spec/water-sm.jpg', (err, data) => {
       console.log('data in readFile: ', data);
       if (err) {
+        console.log('if statement ran', err);
         res.writeHead(404, headers);
-        res.on('error', err => {
-          console.log('Server shut down');
-          res.end();
-        });
+        res.end();
+        return;
       }
       res.write(data, (err) => {
         res.end(data);
