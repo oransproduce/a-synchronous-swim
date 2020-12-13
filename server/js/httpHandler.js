@@ -23,19 +23,38 @@ module.exports.initialize = (queue) => {
 // });
 module.exports.router = (req, res, next = ()=>{}) => {
   console.log('Serving request type ' + req.method + ' for url ' + req.url);
-  let directions = ['left', 'up', 'right', 'down'];
-  let randomInt = Math.floor(Math.random() * 4);
   res.writeHead(200, headers);
   if (req.method === 'GET') {
-    // fs.readFile(exports.backgroundImageFile, (err, data) => {
-    //   res.write(data);
-    // });
-    let next = message.dequeue();
-    if (next) {
-      res.write(next);
-    }
-
+    console.log('req.url: ', req.url);
+    // if (req.url === '/background') {
+    fs.readFile('/Users/Taivnaa/Desktop/hack-reactor/Week-3/hrsf132-a-synchronous-swim/server/spec/water-sm.jpg', (err, data) => {
+      console.log('data in readFile: ', data);
+      if (err) {
+        console.log('if statement ran', err);
+        res.writeHead(404, headers);
+        res.end();
+        return;
+      }
+      res.write(data, (err) => {
+        res.end(data);
+      });
+    });
+    // } else {
+    //   let next = messageQueue.dequeue();
+    //   if (next){
+    //     res.write(next);
+    //     res.end();
+    //   }
+    // }
   }
-  res.end();
-  next(); // invoke next() at the end of a request to help with testing!
+  next();
+  // res.end(data);
+
+  // const shifted = messageQueue.dequeue();
+  // if (shifted) {
+  //   res.write(shifted);
+  // }
 };
+// res.end(data);
+// invoke next() at the end of a request to help with testing!
+
